@@ -12,6 +12,8 @@
   "dependencies": {
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",
+    "@openrouter/ai-sdk-provider": "^1.1.2",
+    "ai": "^5.0.29",
     "axios": "^1.11.0",
     "lucide-react": "^0.542.0",
     "react": "^19.1.1",

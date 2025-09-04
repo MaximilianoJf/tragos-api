@@ -2,6 +2,7 @@
 import {NavLink, useLocation} from "react-router-dom"
 import { useMemo, useEffect, useState, type ChangeEvent, type FormEvent } from "react"
 import { useAppStore } from "../store/useAppStore"
+import type { Categories } from "../types"
 
 export default function Header() {
 
@@ -49,7 +50,7 @@ export default function Header() {
         SearchRecipes(searchFilters)
     }
 
-    
+    type Category = Categories['drinks'][number];
 
   return (
    <header className={isHome ? 'bg-header bg-center bg-cover' : 'bg-slate-800'}>
@@ -67,7 +68,10 @@ export default function Header() {
                         isActive ? 'text-orange-500 uppercase font-bold' : 'text-white uppercase'        
                     }>Favoritos
                     </NavLink>
-
+                    <NavLink to="/generate" className={({isActive}) => 
+                        isActive ? 'text-orange-500 uppercase font-bold' : 'text-white uppercase'        
+                    }>Generar con IA
+                    </NavLink>
                     {/* <Link to="/favoritos" className="text-white uppercase font-bold">
                         Favoritos
                     </Link> */}
@@ -109,7 +113,7 @@ export default function Header() {
                             value={searchFilters.category}
                         >
                             <option>--- Seleccione ---</option>
-                            {categories.drinks.map((category) => (
+                            {categories.drinks.map((category: Category) => (
                                 <option key={category.strCategory}>{category.strCategory}</option>
                             ))}
                         </select>

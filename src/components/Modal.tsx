@@ -13,6 +13,8 @@ export default function Modal() {
 
   //la variable favorites parece que “no se usa”, pero su existencia fuerza la actualización del componente cuando cambian los favoritos.
   const favorites = useAppStore((state) => state.favorites)
+
+
   useEffect(() => {
 
   },[favorites])
