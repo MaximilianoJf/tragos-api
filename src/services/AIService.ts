@@ -11,6 +11,7 @@ export default {
             temperature: 1 //hace que la ia se ponga muy creativa
         })
 
+        
         return result.textStream
     }
 }
